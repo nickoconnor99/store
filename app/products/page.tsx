@@ -1,7 +1,7 @@
 import ProductsContainer from "./ProductsContainer";
 
 async function ProductsPage({
-  searchParams,
+  searchParams,  //server side
 }: {
   searchParams: { layout?: string; search?: string };
 }) {

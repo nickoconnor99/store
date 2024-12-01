@@ -10,12 +10,12 @@ import Link from "next/link";
 
 async function ProductsContainer({
   layout,
-  search,
+  search,  //this will come from NavSearch params
 }: {
   layout: string;
   search: string;
 }) {
-  const products = await fetchAllProducts();
+  const products = await fetchAllProducts({search});
   const totalProducts = products.length;
   const searchTerm = search ? `&search=${search}` : ""; //keep value in searchbar while switching between grid & list
   return (
