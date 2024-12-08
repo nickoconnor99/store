@@ -1,12 +1,12 @@
 import ProductsContainer from "./ProductsContainer";
 
 async function ProductsPage({
-  searchParams,  //server side
+  searchParams, //server side
 }: {
-  searchParams: { layout?: string; search?: string };
+  searchParams: Promise<{ layout?: string; search?: string }>;
 }) {
-  const layout = searchParams.layout || 'grid'; //if not specified go with grid
-  const search = searchParams.search || ''; //if no search term provided use '' which returns all products
+  const layout = (await searchParams).layout || "grid"; //if not specified go with grid
+  const search = (await searchParams).search || ""; //if no search term provided use '' which returns all products
   return (
     <>
       <ProductsContainer layout={layout} search={search} />
