@@ -5,6 +5,7 @@ import { formatCurrency } from "@/utils/format";
 import FavoriteToggleButton from "../FavoutiteToggleButton";
 import AddToCart from "@/components/single-product/AddToCart";
 import ProductRating from "@/components/single-product/ProductRating";
+//added clerk env variables
 
 async function SingleProductPage({ params }: { params: { id: string } }) {
   const product = await fetchSingleProduct(params.id);
