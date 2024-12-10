@@ -1,6 +1,6 @@
-import { FaStar } from 'react-icons/fa';
+import { FaStar } from "react-icons/fa";
 
-async function ProductRating({ productId }: { productId: string }) {
+async function ProductRating() {
   const rating = 4.2;
   const count = 25;
 
@@ -8,7 +8,7 @@ async function ProductRating({ productId }: { productId: string }) {
   const countValue = `(${count}) reviews`;
   return (
     <span className={className}>
-      <FaStar className='w-3 h-3' />
+      <FaStar className="w-3 h-3" />
       {rating} {countValue}
     </span>
   );
