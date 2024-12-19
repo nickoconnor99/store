@@ -10,8 +10,10 @@ function Hero() {
           Pow Pow Balloons
         </h1>
         <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground">
-          🎈PowPow balloons by Paulina 🎈Any occasion, big or small 🎈 Limerck
-          and surrounding areas 🎈 DM for availability
+          🎈PowPow balloons by Paulina <br></br>
+          🎈Any occasion, big or small<br></br>
+          🎈 Limerck and surrounding areas<br></br>
+          🎈 DM for availability
         </p>
         <Button asChild size="lg" className="mt-10">
           <Link href="/products">Our Products</Link>
