@@ -10,9 +10,8 @@ import Image from "next/image";
 import balloon1 from "@/public/images/balloon1.jpg";
 import balloon2 from "@/public/images/balloon2.jpg";
 import balloon5 from "@/public/images/balloon5.jpg";
-import balloon4 from "@/public/images/balloon4.jpg";
 
-const carouselImages = [balloon1, balloon2, balloon5, balloon4];
+const carouselImages = [balloon1, balloon2, balloon5];
 
 function HeroCarousel() {
   return (
