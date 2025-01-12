@@ -23,6 +23,7 @@ function LinksDropdown() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48" align="start" sideOffset={10}>
+        {/* SignedOut comp comes from Clerk */}
         <SignedOut>
           <DropdownMenuItem>
             <SignInButton mode="modal">
@@ -36,6 +37,7 @@ function LinksDropdown() {
             </SignUpButton>
           </DropdownMenuItem>
         </SignedOut>
+        {/* SignedIn comp comes from Clerk */}
         <SignedIn>
           {links.map((link) => {
             return (
