@@ -5,14 +5,14 @@ import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 function Sidebar() {
-    // will give with sales page, products page ...
+  // will give with sales page, products page ...
   const pathname = usePathname();
 
   return (
     <aside>
       {adminLinks.map((link) => {
         // if they match then this is active page
-        const isActivePage = pathname === link.href; 
+        const isActivePage = pathname === link.href;
         const variant = isActivePage ? "default" : "ghost";
         return (
           <Button
