@@ -4,7 +4,8 @@ import db from "@/utils/db";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { productSchema } from "./schemas";
-import { validateWithZodSchema } from "./schemas";
+import { validateWithZodSchema, imageSchema } from "./schemas";
+import { uploadImage } from "./supabase";
 
 const getAuthUser = async () => {
   const user = await currentUser();
@@ -65,19 +66,22 @@ export const createProductAction = async (
 
   try {
     const rawData = Object.fromEntries(formData);
+    const file = formData.get('image') as File;
     const validatedFields = validateWithZodSchema(productSchema, rawData);
+    const validatedFile = validateWithZodSchema(imageSchema, { image: file });
+    const fullPath = await uploadImage(validatedFile.image);
 
     await db.product.create({
       data: {
         ...validatedFields,
-        image: "/images/product-1.jpg",
+        image: fullPath,
         clerkId: user.id,
       },
     });
-    return { message: "product created" };
   } catch (error) {
     return renderError(error);
   }
+  redirect('/admin/products');
 };
 
 //functions to get data from db
