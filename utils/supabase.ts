@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 const bucket = "main-bucket";
 
-// Create a single supabase client for interacting with your database.
+// Create a single supabase client for interacting with your database..
 export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL as string,
   process.env.NEXT_PUBLIC_SUPABASE_KEY as string
