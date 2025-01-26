@@ -8,6 +8,7 @@ export const supabase = createClient(
   process.env.SUPABASE_KEY as string
 );
 
+//getting image file from validaltefromZodSchema(imageSchema)
 export const uploadImage = async (image: File) => {
   const timestamp = Date.now();
   // const newName = `/users/${timestamp}-${image.name}`;
