@@ -15,7 +15,9 @@ function CreateProductPage() {
   const description = faker.lorem.paragraph({ min: 10, max: 12 });
   return (
     <section>
-      <h1 className="text-2xl font-semibold mb-8 capitalize">create product</h1>
+      <h1 className="text-2xl font-semibold mb-8 capitalize">
+        create new product
+      </h1>
       <div className="border p-8 rounded-md">
         <FormContainer action={createProductAction}>
           <div className="grid gap-4 md:grid-cols-2 my-4">
